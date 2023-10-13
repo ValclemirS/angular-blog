@@ -1,7 +1,7 @@
 .container_big-card{
     margin-left:20px ;
     margin-right: 20px ;
-    width: 400px;
+    width: 500px;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,6 @@
 }
 .big-card_photo > img{
     width:100% ;
-    min-width: 400px;
-    height: 250px;
+    min-width: 500px;
+    height: 300px;
 }
