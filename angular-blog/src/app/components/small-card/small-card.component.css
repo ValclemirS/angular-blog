@@ -1,6 +1,7 @@
 .container_small-card{
     width: 800px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+
 }
 .container_small-card-content{
     display: flex;
