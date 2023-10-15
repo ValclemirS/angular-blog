@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {data} from '../../data/data';
 
 @Component({
   selector: 'app-content',
@@ -6,12 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  photocover:string="https://i.pinimg.com/originals/93/03/ed/9303ed216f918c12fb1769de1ceb30e5.jpg"
-  contenttitle:string="mundo"
-  description:string="ola"
-  constructor() { }
+  photocover:string=""
+  contenttitle:string=""
+  description:string=""
+  private id:string|null="0"
+  constructor( 
+    private route:ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(
+      value => this.id = value.get("id")
+    )
+    this.setvaluetocomponents(this.id)
   }
+  setvaluetocomponents(id:string|null){
+    const result= data.filter(
+      article => article.id == id)[0]
+      this.contenttitle= result.title
+      this.description= result.description
+      this.photocover= result.photocover
+      console.log(result.id)
 
+  }
 }

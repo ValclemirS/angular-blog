@@ -14,3 +14,7 @@
 .content__description > p{
     color: rgb(202, 194, 194);
 }
+a{
+    font-size: 25px;
+    color: rgb(170, 32, 106);
+}
